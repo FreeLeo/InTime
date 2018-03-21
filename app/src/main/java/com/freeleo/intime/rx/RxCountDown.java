@@ -16,15 +16,16 @@ import io.reactivex.functions.Function;
  * Create Date: 20/03/2018
  */
 public class RxCountDown {
-
+    public static long _timeStamp;
     public static Observable<Long> countDown(final long timeStamp){
+        _timeStamp = timeStamp;
         return Observable.interval(1, TimeUnit.MILLISECONDS)
                 .subscribeOn(AndroidSchedulers.mainThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .map(new Function<Long, Long>() {
                     @Override
                     public Long apply(Long aLong) throws Exception {
-                        return timeStamp - aLong;
+                        return _timeStamp - aLong;
                     }
                 });
     }

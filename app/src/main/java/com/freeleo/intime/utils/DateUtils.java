@@ -63,6 +63,16 @@ public class DateUtils {
 		return "0000000000";
 	}
 
+	public static long date2TimeStamp(String date_str,SimpleDateFormat format) {
+		try {
+			Date date = format.parse(date_str);
+			return date.getTime();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
 	public static String formatInTime(Context context,long stamp){
 		long day = stamp / (24 * 60 * 60 * 1000);
 		long hour = stamp % (24 * 60 * 60 * 1000) / (60 * 60 * 1000);
@@ -79,6 +89,14 @@ public class DateUtils {
 		long second = stamp % (24 * 60 * 60 * 1000) % (60 * 60 * 1000) % (60 * 1000) / 1000;
 		long millisecond = stamp % (24 * 60 * 60 * 1000) % (60 * 60 * 1000) % (60 * 1000) % 1000;
 		return addZero(day) + "."+addZero(hour)+"."+addZero(minute)+"."+addZero(second)+"."+addTwoZero(millisecond);
+	}
+
+	public static String formatInTimeNoneNoSceond(Context context,long stamp){
+		long day = stamp / (24 * 60 * 60 * 1000);
+		long hour = stamp % (24 * 60 * 60 * 1000) / (60 * 60 * 1000);
+		long minute = stamp % (24 * 60 * 60 * 1000) % (60 * 60 * 1000) / (60 * 1000);
+		long second = stamp % (24 * 60 * 60 * 1000) % (60 * 60 * 1000) % (60 * 1000) / 1000;
+		return addZero(day) + "."+addZero(hour)+"."+addZero(minute)+"."+addZero(second);
 	}
 
 	public static String addZero(long i){
@@ -517,6 +535,8 @@ public class DateUtils {
 
         return sb.toString();
     }
+
+
 
 	public static String formatInterval2(long interval) {
 		if(interval <= 0){

@@ -24,6 +24,7 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.jakewharton:butterknife:8.4.0'
 
+    compile project(':pickerview')
 
     //  Rx dependencies
     compile 'io.reactivex.rxjava2:rxjava:2.1.0'
@@ -31,6 +32,7 @@ dependencies {
     compile "com.github.akarnokd:rxjava2-extensions:0.16.0"
     compile 'com.jakewharton.rxrelay2:rxrelay:2.0.0'
     compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    compile 'com.github.zcweng:switch-button:0.0.3@aar'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'

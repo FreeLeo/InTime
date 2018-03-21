@@ -1,11 +1,29 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="SettingTheme" parent="AppTheme">
+
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <!-- 避免重复设置标题 -->
+        <item name="android:windowActionBar">false</item>
+        <!-- 设置标题栏宽度 -->
+        <!-- <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item> -->
+        <item name="android:windowNoTitle">false</item>
+        <item name="android:windowActionBarOverlay">false</item>
+        <item name="android:windowTitleStyle">@style/CustomWindowTitleText</item>
+    </style>
+
+    <style name="CustomWindowTitleText" >
+        <item name="android:textSize">20dip</item>
+        <item name="android:textColor">#FFffffff</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
 </resources>
