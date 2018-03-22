@@ -11,4 +11,8 @@
     <string name="left_time">Set up the remaining time</string>
     <string name="target_des">Set the target description</string>
     <string name="display_notification">Display in the notification bar</string>
+    <string name="input">input</string>
+    <string name="confirm">confirm</string>
+    <string name="cancel">cancel</string>
+    <string name="edit_des">edit the description</string>
 </resources>
