@@ -11,6 +11,7 @@ It has three functions：</br>
 3.Display in the notification bar</br>
 </br>
 We are also continuing to optimize，thanks for your support.</br>
+</br>
 <a href="https://play.google.com/store/apps/details?id=com.freeleo.intime.in_time"><img width="144" height="44" src="https://github.com/FreeLeo/InTime/blob/master/screenshots/googleplay.jpg"/></a>
 </br>
 </br>
