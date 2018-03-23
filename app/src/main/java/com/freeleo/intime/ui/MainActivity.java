@@ -146,7 +146,7 @@ public class MainActivity extends BaseActivity {
         @Override
         public void handleMessage(Message msg) {
             long leftTime = msg.getData().getLong("lefttime");
-            _InTimeTv.setText(type % 2 == 1 ? DateUtils.formatInTime(MainActivity.this, leftTime) : DateUtils.formatInTimeNone(MainActivity.this, leftTime));
+            _InTimeTv.setText(type % 2 == 1 ? DateUtils.formatInTimeNone(MainActivity.this, leftTime) : DateUtils.formatInTimeNone(MainActivity.this, leftTime));
             super.handleMessage(msg);
         }
     });
