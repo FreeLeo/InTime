@@ -91,6 +91,7 @@ public class MainActivity extends BaseActivity {
             public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
                 mMessenger = new Messenger(iBinder);
                 sendMessageToService(1,PreferencesUtil.get(CPreferences.DESCRIPTION_COUNTDOWN,getResources().getString(R.string.edit_des)));
+                sendMessageToService(4,PreferencesUtil.get(CPreferences.DISPLAY_NOTIFICATION,false));
 //                myBinder = (CountDownService.Binder) iBinder;
 //                myBinder.setNextListener(new CountDownService.NextListener() {
 //                    @Override
@@ -134,6 +135,22 @@ public class MainActivity extends BaseActivity {
         Bundle bundle = new Bundle();
         bundle.putString("data", str);
         bundle.putLong("lefttime", lefttime);
+        message.setData(bundle);
+        try {
+            mMessenger.send(message);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void sendMessageToService(int what,boolean display) {
+        if(mMessenger == null){
+            return;
+        }
+        Message message = Message.obtain(null, what);
+        message.replyTo = replyMessenger;
+        Bundle bundle = new Bundle();
+        bundle.putBoolean(CPreferences.DISPLAY_NOTIFICATION, PreferencesUtil.get(CPreferences.DISPLAY_NOTIFICATION,false));
         message.setData(bundle);
         try {
             mMessenger.send(message);
@@ -215,11 +232,7 @@ public class MainActivity extends BaseActivity {
             if (intent.getAction().equals(Constants.ACTION_NOTIFICATION)) {
                 Bundle bundle = intent.getExtras();
                 boolean display = bundle.getBoolean(CPreferences.DISPLAY_NOTIFICATION);
-                if (display) {
-                    NotificationCenter.showCountDown(MainActivity.this, _InTimeTv.getText().toString(), _desTv.getText().toString());
-                } else {
-                    NotificationCenter.hide(MainActivity.this);
-                }
+                sendMessageToService(4,display);
             } else {
                 long leftTime = intent.getLongExtra("lefttime", 0);
                 _InTimeTv.setText(type % 2 == 1 ? DateUtils.formatInTime(MainActivity.this, leftTime) : DateUtils.formatInTimeNone(MainActivity.this, leftTime));
