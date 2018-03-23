@@ -1,18 +1,18 @@
 <resources>
     <string name="app_name">In Time</string>
 
-    <string name="days">d</string>
-    <string name="hours">h</string>
-    <string name="minutes">m</string>
-    <string name="seconds">s</string>
-    <string name="milliseconds">ms</string>
+    <string name="days">天</string>
+    <string name="hours">时</string>
+    <string name="minutes">分</string>
+    <string name="seconds">秒</string>
+    <string name="milliseconds">毫秒</string>
 
-    <string name="setting">Setting</string>
-    <string name="left_time">Set up the remaining time</string>
-    <string name="target_des">Set the target description</string>
-    <string name="display_notification">Display in the notification bar</string>
-    <string name="input">input</string>
-    <string name="confirm">confirm</string>
-    <string name="cancel">cancel</string>
-    <string name="edit_des">edit the description</string>
+    <string name="setting">个性化</string>
+    <string name="left_time">设置倒计时</string>
+    <string name="target_des">设置目标描述</string>
+    <string name="display_notification">显示在通知栏上</string>
+    <string name="input">输入</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="edit_des">请编辑描述</string>
 </resources>
